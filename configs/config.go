@@ -16,6 +16,10 @@ func Init(configpath string) error {
 	if configpath == "" {
 		configpath = "config.json"
 	}
+	c1, _ := filetools.PathExists(strings.Replace(configpath, ".json", "debug.json", 1))
+	if c1 {
+		configpath = strings.Replace(configpath, ".json", "debug.json", 1)
+	}
 
 	c, err := filetools.ReadAll(configpath)
 	if err != nil {
