@@ -1,5 +1,10 @@
 package configs
 
+/*
+默认读 config.json
+如果存在 config +  debug.json 文件，读 config +  debug.json
+*/
+
 import (
 	"encoding/json"
 	"fmt"
