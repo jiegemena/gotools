@@ -13,7 +13,6 @@ import (
 )
 
 func CmdTest() {
-	//删除C:\Users\Administrator\Desktop目录下的index.html文件
 	c := exec.Command("cmd", "/C", "python", "D:\\codehome\\pyhome\\ptest\\index.py")
 	if err := c.Run(); err != nil {
 		fmt.Println("Error: ", err)
