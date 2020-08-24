@@ -14,7 +14,7 @@ import (
 	"github.com/jiegemena/gotools/filetools"
 )
 
-var mconfigjson = make(map[string]interface{}, 4)
+var Mconfigjson = make(map[string]interface{}, 4)
 
 //读取配置 config.json
 func Init(configpath string) error {
@@ -32,7 +32,7 @@ func Init(configpath string) error {
 		return err
 	}
 
-	err = json.Unmarshal(c, &mconfigjson)
+	err = json.Unmarshal(c, &Mconfigjson)
 	if err != nil {
 		fmt.Println("err = ", err)
 		return err
@@ -54,7 +54,7 @@ func GetConfig(key string) interface{} {
 	if lens1 == 0 {
 		return nil
 	}
-	v1 := mconfigjson[s1[0]]
+	v1 := Mconfigjson[s1[0]]
 	if lens1 == 1 {
 		return v1
 	}
@@ -77,7 +77,7 @@ func GetConfig(key string) interface{} {
 		}
 	}
 
-	return mconfigjson[key]
+	return Mconfigjson[key]
 }
 
 func GetJsonList(node interface{}) []interface{} {

@@ -25,3 +25,7 @@ func ConvertByte2String(byte []byte, charset Charset) string {
 	}
 	return str
 }
+
+func GetTimeFormat() string {
+	return "2006-01-02 15:04:01"
+}

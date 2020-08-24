@@ -1,10 +1,14 @@
 package timetools
 
-import "time"
+import (
+	"time"
+
+	"github.com/jiegemena/gotools/stringtools"
+)
 
 func GetNowDateStr(layout string) string {
 	if layout == "" {
-		layout = "2006-01-02 15:04:05"
+		layout = stringtools.GetTimeFormat()
 	}
 	t := time.Now().Format(layout)
 	return t
